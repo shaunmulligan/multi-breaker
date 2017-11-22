@@ -1,0 +1,7 @@
+echo "Taking the update lock"
+lockfile /tmp/resin/resin-updates.lock
+
+# Don't exit the process
+while true; do
+    sleep 1
+done
