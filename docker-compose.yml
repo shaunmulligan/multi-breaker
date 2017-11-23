@@ -43,6 +43,6 @@ services:
 
 volumes:
   data-volume:
-    external: false
-    labels:
-      com.example.description: "shared data"
+    # external: false
+    # labels:
+    #   com.example.description: "shared data"

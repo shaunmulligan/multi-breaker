@@ -29,6 +29,8 @@ else
     echo "TEST PASSED"
 fi
 
+hcitool lescan
+
 # Don't exit the process
 while true; do
     sleep 1
