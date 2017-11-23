@@ -7,8 +7,8 @@ services:
       - "80:5000"
     depends_on:
       - redis
-    # expose:
-    #   - "5000"
+    expose:
+      - "5000"
     labels:
       io.resin.features.dbus: "true"
       io.resin.features.kernel_modules: "true"
@@ -31,7 +31,7 @@ services:
   bluetooth:
     build: ./bluetooth
     privileged: true
-    # network_mode: "host"
+    network_mode: "host"
     environment:
       INITSYSTEM: on
     command: ["bash", "scan.sh"]
