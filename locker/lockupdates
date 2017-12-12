@@ -3,5 +3,6 @@ lockfile /tmp/resin/resin-updates.lock
 
 # Don't exit the process
 while true; do
+    ping google.com
     sleep 1
 done
