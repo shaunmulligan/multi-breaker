@@ -35,9 +35,9 @@ services:
     command: ["bash", "scan.sh"]
     volumes:
       - data-volume:/containers-shared
-  # updateLocker:
-  #   build: ./locker
-  #   command: ["bash", "lockupdates"]
+  updateLocker:
+    build: ./locker
+    command: ["bash", "lockupdates"]
 
 volumes:
   data-volume:
