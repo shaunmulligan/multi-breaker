@@ -13,8 +13,7 @@ services:
       io.resin.features.firmware: "true"
       io.resin.features.supervisor_api: "true"
   redis:
-    # image: arm32v7/redis
-    build: ./redis
+    image: arm32v7/redis
     volumes:
       - data-volume:/containers-shared
   gpio:
@@ -26,7 +25,7 @@ services:
       - SYS_RAWIO
     environment:
       TEST_ENV: hello
-    restart: no
+    # restart: "no"
   bluetooth:
     build: ./bluetooth
     privileged: true
