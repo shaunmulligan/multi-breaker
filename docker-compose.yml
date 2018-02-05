@@ -9,9 +9,9 @@ services:
       - redis
     labels:
       io.resin.features.dbus: "true"
-      io.resin.features.kernel_modules: "true"
+      io.resin.features.kernel-modules: "true"
       io.resin.features.firmware: "true"
-      io.resin.features.supervisor_api: "true"
+      io.resin.features.supervisor-api: "true"
   redis:
     image: arm32v7/redis
     volumes:
@@ -35,9 +35,9 @@ services:
     command: ["bash", "scan.sh"]
     volumes:
       - data-volume:/containers-shared
-  updateLocker:
-    build: ./locker
-    command: ["bash", "lockupdates"]
+  # updateLocker:
+  #   build: ./locker
+  #   command: ["bash", "lockupdates"]
 
 volumes:
   data-volume:
