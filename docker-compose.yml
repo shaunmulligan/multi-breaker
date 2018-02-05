@@ -16,16 +16,16 @@ services:
     image: arm32v7/redis
     volumes:
       - data-volume:/containers-shared
-  # gpio:
-  #   build: ./gpio
-  #   devices:
-  #     - "/dev/i2c-1:/dev/i2c-1"
-  #     - "/dev/mem:/dev/mem"
-  #   cap_add: 
-  #     - SYS_RAWIO
-  #   environment:
-  #     TEST_ENV: hello
-  #   # restart: "no"
+  gpio:
+    build: ./gpio
+    devices:
+      - "/dev/i2c-1:/dev/i2c-1"
+      - "/dev/mem:/dev/mem"
+    cap_add: 
+      - SYS_RAWIO
+    environment:
+      TEST_ENV: hello
+    # restart: "no"
   # bluetooth:
   #   build: ./bluetooth
   #   privileged: true
