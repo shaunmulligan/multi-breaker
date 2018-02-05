@@ -7,11 +7,11 @@ services:
       - "80:5000"
     depends_on:
       - redis
-    # labels:
-    #   io.resin.features.dbus: "true"
-    #   io.resin.features.kernel_modules: "true"
-    #   io.resin.features.firmware: "true"
-    #   io.resin.features.supervisor_api: "true"
+    labels:
+      io.resin.features.dbus: "true"
+      io.resin.features.kernel_modules: "true"
+      io.resin.features.firmware: "true"
+      io.resin.features.supervisor_api: "true"
   redis:
     image: arm32v7/redis
     volumes:
