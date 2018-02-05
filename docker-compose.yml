@@ -7,37 +7,37 @@ services:
       - "80:5000"
     depends_on:
       - redis
-    labels:
-      io.resin.features.dbus: "true"
-      io.resin.features.kernel_modules: "true"
-      io.resin.features.firmware: "true"
-      io.resin.features.supervisor_api: "true"
+    # labels:
+    #   io.resin.features.dbus: "true"
+    #   io.resin.features.kernel_modules: "true"
+    #   io.resin.features.firmware: "true"
+    #   io.resin.features.supervisor_api: "true"
   redis:
     image: arm32v7/redis
     volumes:
       - data-volume:/containers-shared
-  gpio:
-    build: ./gpio
-    devices:
-      - "/dev/i2c-1:/dev/i2c-1"
-      - "/dev/mem:/dev/mem"
-    cap_add: 
-      - SYS_RAWIO
-    environment:
-      TEST_ENV: hello
-    # restart: "no"
-  bluetooth:
-    build: ./bluetooth
-    privileged: true
-    network_mode: "host"
-    environment:
-      INITSYSTEM: on
-    command: ["bash", "scan.sh"]
-    volumes:
-      - data-volume:/containers-shared
-  updateLocker:
-    build: ./locker
-    command: ["bash", "lockupdates"]
+  # gpio:
+  #   build: ./gpio
+  #   devices:
+  #     - "/dev/i2c-1:/dev/i2c-1"
+  #     - "/dev/mem:/dev/mem"
+  #   cap_add: 
+  #     - SYS_RAWIO
+  #   environment:
+  #     TEST_ENV: hello
+  #   # restart: "no"
+  # bluetooth:
+  #   build: ./bluetooth
+  #   privileged: true
+  #   network_mode: "host"
+  #   environment:
+  #     INITSYSTEM: on
+  #   command: ["bash", "scan.sh"]
+  #   volumes:
+  #     - data-volume:/containers-shared
+  # updateLocker:
+  #   build: ./locker
+  #   command: ["bash", "lockupdates"]
 
 volumes:
   data-volume:
