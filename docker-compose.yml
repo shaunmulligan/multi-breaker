@@ -26,15 +26,15 @@ services:
     environment:
       TEST_ENV: hello
     # restart: "no"
-  # bluetooth:
-  #   build: ./bluetooth
-  #   privileged: true
-  #   network_mode: "host"
-  #   environment:
-  #     INITSYSTEM: on
-  #   command: ["bash", "scan.sh"]
-  #   volumes:
-  #     - data-volume:/containers-shared
+  bluetooth:
+    build: ./bluetooth
+    privileged: true
+    network_mode: "host"
+    environment:
+      INITSYSTEM: on
+    command: ["bash", "scan.sh"]
+    volumes:
+      - data-volume:/containers-shared
   # updateLocker:
   #   build: ./locker
   #   command: ["bash", "lockupdates"]
